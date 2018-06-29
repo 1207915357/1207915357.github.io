@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        我的第一篇博客 · 看不见的城
+        正则表达式的运算 · 看不见的城
         
     </title>
     <link rel="icon" href= /assests/favicon.ico>
@@ -63,7 +63,7 @@
                 <a href="/" >看不见的城</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">我的第一篇博客</a>
+                <a href="#" class="post-name">正则表达式的运算</a>
             </div>
     </div>
     
@@ -84,7 +84,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            我的第一篇博客
+            正则表达式的运算
             <!-- 404 -->
             
         </h1>
@@ -100,15 +100,9 @@
         
             <!-- 文章页标签  -->
             
-                <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 我的第一篇博客>我的第一篇博客</a>
-    
-</div>
-            
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2017/10/18</span>
+                <span class="post-intro-time">2017/02/18</span>
             </div>
         
     </div>
@@ -151,19 +145,151 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>进击的巨人.</p>
+        <p>##1.正则表达式(regular expression)</p>
+<p>1&gt; 正则表达对象:由正则表达式创建的对象, 该对象可以进行 <strong>匹配</strong>, <strong>提取</strong> 和 <strong>替换</strong>.</p>
+<p>2&gt; 创建正则表达式对象</p>
+<pre><code>1)构造函数
+var regex= new RegExp( &apos;正则&apos;);
+var r = new RegExp( &apos;正则&apos;, &apos;g&apos; );   全局模式
 
+2) 字面量
+var regex = /正则表达式/;
+var r = /正则/g;  全局模式
+</code></pre><p>##2.使用正则表达式进行匹配</p>
+<pre><code>正则对象.test( 字符串 )    返回boolean值.
+</code></pre><p>##3.基本元字符<br>1&gt;  <code>.</code> 表示任一个非换行的字符</p>
+<p>2&gt; ( )    表示分组和提高优先级</p>
+<p>3&gt; [ ]    表示一个字符, 出现在 [  ] 中的字符</p>
+<pre><code>用法:  [abc]    出现 [] 中的任意一个字符  匹配 a, 或 b, 或 c
+foo[dt]
+</code></pre><p>4&gt; <strong>|</strong>  或   </p>
+<pre><code>用法:正则表达式|正则表达式
+foot 或 food
+foot|food
+foo(t|d)
+</code></pre><p>5&gt;转义字符: \</p>
+<pre><code>表示点:   \.
+表示[]:   \[  \]
+表示():      \(  \)
+表示\ :   \\
+</code></pre><p>##4. 限定元字符<br>1&gt;  <code>*</code>    紧跟前面的一个字符或一组字符出现 0 次到多次</p>
+<p>2&gt;  +    紧跟在前面的字符出现 1 次到多次</p>
+<p>3&gt;   ?    紧跟在前面的字符出现 0 次或 1 次</p>
+<p>4&gt;    {数字}        紧跟在前面的字符出现指定次数</p>
+<pre><code>a{3}    aaa
+</code></pre><p>5&gt;    {数字,}        紧跟在前面的字符至少出现指定次数</p>
+<pre><code>a{3,}    aaa, aaaaaaaaa, aaaaaaaaaaaaaa, ...
+</code></pre><p>6&gt;     {数字, 数字} 紧跟在前面的字符出现的次数范围</p>
+<pre><code>a{1, 3}        a, aa, aaa
+</code></pre><p>7&gt; <code>^</code>    表示必须以 xxx 开头</p>
+<p>8&gt; <code>$</code>    表示 必须以 xxx 结尾</p>
+<p>9&gt; [^字符] 否定字符,不为这些字符的字符</p>
+<pre><code>[^abc]  不是a 也不是b 也不是c 的字符
+</code></pre><p>##5.提取(重点)</p>
+<blockquote>
+<p>正则表达式对象 . exec( 字符串 ) 返回有一个数组</p>
+</blockquote>
+<pre><code>&lt;script&gt;
+   // 案例： 在 &apos;abc123def456ghij789klum&apos; 提取数字
+   var str = &apos;abc123def456ghij789klum&apos;;
+   // 1&gt; 全局模式
+   var r = /\d+/g;
+   // 2&gt; 匹配要使用循环的方式
+   var res;
+   while ( res = r.exec( str ) ) {
+      console.log( res );
+   }
+&lt;/script&gt;
+</code></pre><p>##6.将匹配到的结果进行解析<br>案例:var str = ‘我有一个邮箱, 是 itcast@itcast.cn, 还有 abc@126.com, 和 1234567@qq.com’<br>要求将里面的邮箱全部提取出来, 然后将名字还有主机名也取出来 </p>
+<p>1).如果需要将匹配到的结果再次分解, 可以使用分组的形式, 在正则中分组即可（）</p>
+<p>2).注意, 正则表达式中, 分组是有编号的. 从左往右数 ‘(‘. 从 1 开始依次编号// 匹配提取的结果中, 对应的编号就可以获得分解的数据</p>
+<pre><code>&lt;script&gt;
+   var str = &apos;我有一个邮箱, 是 abc@itcast.cn, 还有 abc@126.com, 和 1234567@qq.com&apos;
+   var r = /([a-zA-Z\d]+)@([a-zA-Z\d]+(?:\.[a-zA-Z\d]+)+)/g;
+   // var res = r.exec( str );
+   var res;
+   while ( res = r.exec( str ) ) {
+      console.log( &apos;邮箱是: &apos; + res[ 0 ] + 
+                &apos;, 用户名: &apos; + res[ 1 ] + 
+                &apos;, 主机名: &apos; + res[ 2 ] );
+   }
+&lt;/script&gt;
+</code></pre><p>##7.匹配但是不去捕获的元字符</p>
+<p>(?:其他正则表达式内容) 不捕获括号里的内容。 提高性能，避免消耗算法；</p>
+<p>##8.要截取一个字符串中的一个 html 标签</p>
+<blockquote>
+<p>反向引用： ‘\数字’ 的方式引用该组</p>
+</blockquote>
+<pre><code>&lt;script&gt;
+   var str = &apos;123&lt;div&gt;456&lt;/div&gt;78&lt;div&gt;9&lt;/div&gt;0&lt;i&gt;&lt;/i&gt;abc&apos;;
+   var r = /&lt;(\w+)&gt;.*?&lt;\/\1&gt;/g;   \1 表示第一个括号里的内容
+   var res;
+   while ( res = r.exec(str) ) {
+      console.log( res[ 0 ] );
+   }
+&lt;/script&gt;
+</code></pre><p>##9.贪婪模式</p>
+<p>1).凡是在正则表达式中, 涉及到次数限定的, 一般默认都是尽可能的多匹配.<br>取消贪婪模式. 在次数限定符后面加上 ?</p>
+<p>2).注意: 贪婪模式性能会略高于非贪婪模式, 所以开发的时候. 一般不考虑贪婪的问题</p>
+<p>只有代码匹配结果出现问题了, 一般一次多匹配了, 才会取消贪婪</p>
+<p>3).多个贪婪在一起的时候的强度</p>
+<pre><code>\d+\d+\d+  第一个强度最强 ，后面两个一样。
+1234567   12345 6 7
+如果取消第一个的贪婪模式
+\d+?\d+\d+  1 23456 7
+</code></pre><p>##10.替换（字符串方法）<br>1&gt; 字符串替换方法</p>
+<pre><code>字符串1.replace( 字符串2, 字符串3 )
+在 字符串1 中找到 字符串2, 将其替换成 字符串3, 返回替换后的字符串
+特点: 只替换第一个找到的字符串
+
+&quot;aaa&quot;.replace( &apos;a&apos;, &apos;A&apos; ) -&gt; &apos;Aaa&apos;
+</code></pre><p>2&gt; 正则替换</p>
+<pre><code>字符串.replace( 正则表达式, 字符串 ) -&gt; 字符串
+1. 简单替换
+    &apos;aaaaa-------bbbbbb------ccccc&apos;.replace( /-+/, &apos;-&apos; )
+    &apos;aaaaa-------bbbbbb------ccccc&apos;.replace( /-+/g, &apos;-&apos; )
+2. 分组替换
+    可以在替换字符串中, 使用 $数字 来引用替换的数据（参数中）
+    类似 \1 反向引用（用在正则中）
+
+    &apos;abc123&apos;.replace( /(\d+)/, &apos;d$1&apos; ) -&gt; &apos;abcd123&apos;
+
+    &apos;1991-1-1&apos;
+    中国: 1991年1月1日
+    欧洲: 1/1/1991
+    ... : 1991 1 1
+&apos;1991-1-19&apos;.replace( /(\d+)-(\d+)-(\d+)/, &apos;$1年$2月$3日&apos; )
+</code></pre><p>3&gt; 函数参数用法(难点)</p>
+<pre><code>语法:
+    字符串.replace( 正则表达式, fn )
+</code></pre><p>案例:</p>
+<pre><code>&apos;我的邮箱是:abc@itcast.cn, 你的邮箱是: def@itcast.cn&apos;
+
+// 要求 只显示 第一个字符, 其余的都是用 * 表示
+Var str=&apos;我的邮箱是:abc@itcast.cn, 你的邮箱是: defghijklim@itcast.cn&apos;;
+str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
+        // 将用户名 变成 a***** 的形式
+        var first = g1.charAt( 0 );
+        var start = [];
+        for ( var i = 0; i &lt; g1.length - 1; i++ ) {
+            start.push( &apos;*&apos; );
+        }
+
+        return first + start.join(&apos;&apos;) + &apos;@&apos; + g2;
+
+    } );
+</code></pre>
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
-        
-            <li class="previous">
-                <a href= "/2017/02/18/正则表达式的运算/" title= 正则表达式的运算 >
-                    <span>Previous Post</span>
-                    <span>正则表达式的运算</span>
+            <li class="next">
+                <a href= "/2017/10/18/看不见的城/" title= 我的第一篇博客 >
+                    <span>Next Post</span>
+                    <span>我的第一篇博客</span>
                 </a>
             </li>
+        
         
     </ul>
     <!-- 评论插件 -->

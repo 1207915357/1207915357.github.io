@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>删除数组重复元素 | 看不见的城</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  [...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove=f">
-<meta name="keywords" content="se6">
+  <meta name="description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  1Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  1[...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove">
+<meta name="keywords" content="数组去重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="删除数组重复元素">
 <meta property="og:url" content="http://yoursite.com/2018/07/03/删除数组重复元素/index.html">
 <meta property="og:site_name" content="看不见的城">
-<meta property="og:description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  [...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove=f">
+<meta property="og:description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  1Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  1[...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-03T07:08:54.072Z">
+<meta property="og:updated_time" content="2018-07-03T07:11:46.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="删除数组重复元素">
-<meta name="twitter:description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  [...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove=f">
+<meta name="twitter:description" content="方法一：使用es6的set快速去重 set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。  1Array.from(new Set(arr))  扩展运算符（内部使用的是for…of循环）  1[...new Set(arr)] 方法二：使用对象的属性不能相同去重12345678910111213141516171819Array.prototype.remove">
   
     <link rel="alternative" href="/atom.xml" title="看不见的城" type="application/atom+xml">
   
@@ -174,12 +174,12 @@
         <h5 id="方法一：使用es6的set快速去重"><a href="#方法一：使用es6的set快速去重" class="headerlink" title="方法一：使用es6的set快速去重"></a>方法一：使用es6的set快速去重</h5><blockquote>
 <p>set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。</p>
 </blockquote>
-<p><code>Array.from(new Set(arr))</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Array.from(new Set(arr))</div></pre></td></tr></table></figure>
 <blockquote>
 <p>扩展运算符（内部使用的是for…of循环）</p>
 </blockquote>
-<p><code>[...new Set(arr)]</code></p>
-<h5 id="方法二：使用对象的属性不能相同去重"><a href="#方法二：使用对象的属性不能相同去重" class="headerlink" title="方法二：使用对象的属性不能相同去重"></a>方法二：使用对象的属性不能相同去重</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Array.prototype.remove=function()&#123;</div><div class="line"></div><div class="line">  let obj=&#123;&#125;,newArr=[]</div><div class="line"></div><div class="line">  for(i=0; i&lt;arr.length; i++)&#123;</div><div class="line"></div><div class="line">    if(!obj[arr[i]])&#123;     &lt;!--找不到则证明这个元素没有重复--&gt;</div><div class="line"></div><div class="line">      obj[arr[i]] = 1</div><div class="line"></div><div class="line">      newArr.push(arr[i])</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;	</div><div class="line"></div><div class="line">    return newArr</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[...new Set(arr)]</div></pre></td></tr></table></figure>
+<h5 id="方法二：使用对象的属性不能相同去重"><a href="#方法二：使用对象的属性不能相同去重" class="headerlink" title="方法二：使用对象的属性不能相同去重"></a>方法二：使用对象的属性不能相同去重</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Array.prototype.remove=function()&#123;</div><div class="line"></div><div class="line">  let arr=this,obj=&#123;&#125;,newArr=[]</div><div class="line"></div><div class="line">  for(i=0; i&lt;arr.length; i++)&#123;</div><div class="line"></div><div class="line">    if(!obj[arr[i]])&#123;     &lt;!--找不到则证明这个元素没有重复--&gt;</div><div class="line"></div><div class="line">      obj[arr[i]] = 1</div><div class="line"></div><div class="line">      newArr.push(arr[i])</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;	</div><div class="line"></div><div class="line">    return newArr</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="方法三：双层循环"><a href="#方法三：双层循环" class="headerlink" title="方法三：双层循环"></a>方法三：双层循环</h5><blockquote>
 <p>外层循环元素，内层循环时比较值，如果有相同的值则跳过，不相同则push进数组。</p>
 </blockquote>
@@ -219,7 +219,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">se6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数组去重</a>
         		</li>
       		
 		</ul>
@@ -426,6 +426,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">我的第一篇博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数组去重</a>
               </li>
             
             <div class="clearfix"></div>

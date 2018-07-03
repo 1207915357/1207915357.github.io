@@ -176,41 +176,12 @@
 <p>扩展运算符（内部使用的是for…of循环）</p>
 </blockquote>
 <p><code>[...new Set(arr)]</code></p>
-<h5 id="方法二：使用对象的属性不能相同去重"><a href="#方法二：使用对象的属性不能相同去重" class="headerlink" title="方法二：使用对象的属性不能相同去重"></a>方法二：使用对象的属性不能相同去重</h5><p><code>Array.prototype.remove=function(){</code></p>
-<p>  <code>let obj={},newArr=[]</code></p>
-<p>  <code>for(i=0; i&lt;arr.length; i++){</code></p>
-<p>​    <code>if(!obj[arr[i]]){</code>     <!--找不到则证明这个元素没有重复--></p>
-<p>​      <code>obj[arr[i]] = 1</code></p>
-<p>​      <code>newArr.push(arr[i])</code></p>
-<p>​      <code>}</code></p>
-<p>​    <code>}</code>    </p>
-<p>​    <code>return newArr</code></p>
-<p><code>}</code></p>
+<h5 id="方法二：使用对象的属性不能相同去重"><a href="#方法二：使用对象的属性不能相同去重" class="headerlink" title="方法二：使用对象的属性不能相同去重"></a>方法二：使用对象的属性不能相同去重</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Array.prototype.remove=function()&#123;</div><div class="line"></div><div class="line">  let obj=&#123;&#125;,newArr=[]</div><div class="line"></div><div class="line">  for(i=0; i&lt;arr.length; i++)&#123;</div><div class="line"></div><div class="line">    if(!obj[arr[i]])&#123;     &lt;!--找不到则证明这个元素没有重复--&gt;</div><div class="line"></div><div class="line">      obj[arr[i]] = 1</div><div class="line"></div><div class="line">      newArr.push(arr[i])</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;	</div><div class="line"></div><div class="line">    return newArr</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h5 id="方法三：双层循环"><a href="#方法三：双层循环" class="headerlink" title="方法三：双层循环"></a>方法三：双层循环</h5><blockquote>
 <p>外层循环元素，内层循环时比较值，如果有相同的值则跳过，不相同则push进数组。</p>
 </blockquote>
-<p><code>Array.prototype.remove= function(){</code></p>
-<p>  <code>var arr = this, result = [],  i,  j,</code></p>
-<p>  <code>for(i = 0; i &lt; arr.length; i++){</code></p>
-<p>  <code>for(j = i + 1; j &lt; arr.length; j++){</code></p>
-<p>​    <code>if(arr[i] === arr[j]){</code></p>
-<p>​      <code>j = ++i;</code></p>
-<p><code>}</code></p>
-<p><code>}</code></p>
-<p><code>result.push(arr[i]);</code></p>
-<p><code>}</code></p>
-<p><code>return</code> <code>result;</code></p>
-<p><code>}</code></p>
-<h5 id="方法四：splice在原数组进行操作"><a href="#方法四：splice在原数组进行操作" class="headerlink" title="方法四：splice在原数组进行操作"></a>方法四：<strong>splice在原数组进行操作</strong></h5><p><code>function removeDuplicates(nums) {</code> </p>
-<p> <code>for(let i = nums.length-1;i&gt;=0;i--){</code></p>
-<p>​        <code>for(let j = i-1 ; j&gt;=0; j--){</code></p>
-<p>​            <code>if(nums[i]==nums[j]){</code></p>
-<p>​                <code>nums.splice(j,1)</code></p>
-<p>​            <code>}</code></p>
-<p>​        <code>}</code></p>
-<p>​    <code>}</code></p>
-<p>​    <code>return nums</code></p>
-<p><code>}</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Array.prototype.remove= function()&#123;</div><div class="line"> var arr = this, result = [],  i,  j,</div><div class="line">  for(i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">    for(j = i + 1; j &lt; arr.length; j++)&#123;</div><div class="line">      if(arr[i] === arr[j])&#123;</div><div class="line">      j = ++i;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">  result.push(arr[i]);</div><div class="line"> &#125;</div><div class="line"> return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="方法四：splice在原数组进行操作"><a href="#方法四：splice在原数组进行操作" class="headerlink" title="方法四：splice在原数组进行操作"></a>方法四：<strong>splice在原数组进行操作</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function removeDuplicates(nums) &#123; </div><div class="line">for(let i = nums.length-1;i&gt;=0;i--)&#123;</div><div class="line">      for(let j = i-1 ; j&gt;=0; j--)&#123;</div><div class="line">           if(nums[i]==nums[j])&#123;</div><div class="line">             nums.splice(j,1)</div><div class="line">           &#125;</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line">   return nums</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
 

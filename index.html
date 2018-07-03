@@ -148,6 +148,122 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-删除数组重复元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/03/删除数组重复元素/">删除数组重复元素</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/03/删除数组重复元素/" class="archive-article-date">
+  	<time datetime="2018-07-03T06:09:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="方法一：使用es6的set快速去重"><a href="#方法一：使用es6的set快速去重" class="headerlink" title="方法一：使用es6的set快速去重"></a>方法一：使用es6的set快速去重</h5><blockquote>
+<p>set 为一种特殊的数据结构，它具有唯一性。Array.from()把伪数转换成数组。</p>
+</blockquote>
+<p><code>Array.from(new Set(arr))</code></p>
+<blockquote>
+<p>扩展运算符（内部使用的是for…of循环）</p>
+</blockquote>
+<p><code>[...new Set(arr)]</code></p>
+<h5 id="方法二：使用对象的属性不能相同去重"><a href="#方法二：使用对象的属性不能相同去重" class="headerlink" title="方法二：使用对象的属性不能相同去重"></a>方法二：使用对象的属性不能相同去重</h5><p><code>Array.prototype.remove=function(){</code></p>
+<p>  <code>let obj={},newArr=[]</code></p>
+<p>  <code>for(i=0; i&lt;arr.length; i++){</code></p>
+<p>​    <code>if(!obj[arr[i]]){</code>     <!--找不到则证明这个元素没有重复--></p>
+<p>​      <code>obj[arr[i]] = 1</code></p>
+<p>​      <code>newArr.push(arr[i])</code></p>
+<p>​      <code>}</code></p>
+<p>​    <code>}</code>    </p>
+<p>​    <code>return newArr</code></p>
+<p><code>}</code></p>
+<h5 id="方法三：双层循环"><a href="#方法三：双层循环" class="headerlink" title="方法三：双层循环"></a>方法三：双层循环</h5><blockquote>
+<p>外层循环元素，内层循环时比较值，如果有相同的值则跳过，不相同则push进数组。</p>
+</blockquote>
+<p><code>Array.prototype.remove= function(){</code></p>
+<p>  <code>var arr = this, result = [],  i,  j,</code></p>
+<p>  <code>for(i = 0; i &lt; arr.length; i++){</code></p>
+<p>  <code>for(j = i + 1; j &lt; arr.length; j++){</code></p>
+<p>​    <code>if(arr[i] === arr[j]){</code></p>
+<p>​      <code>j = ++i;</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>result.push(arr[i]);</code></p>
+<p><code>}</code></p>
+<p><code>return</code> <code>result;</code></p>
+<p><code>}</code></p>
+<h5 id="方法四：splice在原数组进行操作"><a href="#方法四：splice在原数组进行操作" class="headerlink" title="方法四：splice在原数组进行操作"></a>方法四：<strong>splice在原数组进行操作</strong></h5><p><code>function removeDuplicates(nums) {</code> </p>
+<p> <code>for(let i = nums.length-1;i&gt;=0;i--){</code></p>
+<p>​        <code>for(let j = i-1 ; j&gt;=0; j--){</code></p>
+<p>​            <code>if(nums[i]==nums[j]){</code></p>
+<p>​                <code>nums.splice(j,1)</code></p>
+<p>​            <code>}</code></p>
+<p>​        <code>}</code></p>
+<p>​    <code>}</code></p>
+<p>​    <code>return nums</code></p>
+<p><code>}</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">se6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/03/删除数组重复元素/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-博客的作用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -585,6 +701,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">se6</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>

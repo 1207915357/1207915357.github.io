@@ -148,6 +148,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-判断数组是否有重复项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/04/判断数组是否有重复项/">判断数组是否有重复项</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/04/判断数组是否有重复项/" class="archive-article-date">
+  	<time datetime="2018-07-04T02:20:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给定一个整数数组，判断是否存在重复元素。</p>
+<p>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。</p>
+</blockquote>
+<h5 id="方法一：es6-Set方法"><a href="#方法一：es6-Set方法" class="headerlink" title="方法一：es6 Set方法"></a>方法一：es6 Set方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(nums)</div><div class="line">    <span class="keyword">return</span> set.size != nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="方法二：sort排序比较临近两项"><a href="#方法二：sort排序比较临近两项" class="headerlink" title="方法二：sort排序比较临近两项"></a>方法二：sort排序比较临近两项</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(nums.length&lt;=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    nums.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    	<span class="keyword">return</span> a-b</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i&lt;nums.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="方法三：利用对象属性"><a href="#方法三：利用对象属性" class="headerlink" title="方法三：利用对象属性"></a>方法三：利用对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> obj = &#123;&#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> nums)&#123;</div><div class="line">        <span class="keyword">if</span>(!obj[i])&#123;</div><div class="line">            obj[i]=<span class="number">1</span></div><div class="line">            <span class="keyword">continue</span>      <span class="comment">//continue 跳过当前循环 </span></div><div class="line">        &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数组重复</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/04/判断数组是否有重复项/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-删除数组重复元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -674,11 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">se6</a>
+                <a href="javascript:void(0)" class="js-tag color5">数组去重</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color5">数组重复</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,7 +766,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数组去重</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
             
             <div class="clearfix"></div>

@@ -13,6 +13,23 @@
 <meta name="theme-color" content="#222">
 
 
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2aab16ab"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -95,7 +112,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -196,6 +213,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -229,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/04/判断数组是否有重复项/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/前端/博客主题配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="看不见的城">
@@ -248,7 +285,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/04/判断数组是否有重复项/" itemprop="url">判断数组是否有重复项</a></h1>
+                <a class="post-title-link" href="/前端/博客主题配置/" itemprop="url">博客主题插件各种配置</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T10:20:15+08:00">
-                2018-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T16:52:00+08:00">
+                2018-11-20
               </time>
             
 
@@ -271,6 +308,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -281,6 +340,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  24
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -301,12 +391,8 @@
         
           
             <blockquote>
-<p>给定一个整数数组，判断是否存在重复元素。</p>
-<p>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。</p>
+<p>今天花了点时间换了下博客的主题，以及配置了一些插件！</p>
 </blockquote>
-<h5 id="方法一：es6-Set方法"><a href="#方法一：es6-Set方法" class="headerlink" title="方法一：es6 Set方法"></a>方法一：es6 Set方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(nums)</div><div class="line">    <span class="keyword">return</span> set.size != nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h5 id="方法二：sort排序比较临近两项"><a href="#方法二：sort排序比较临近两项" class="headerlink" title="方法二：sort排序比较临近两项"></a>方法二：sort排序比较临近两项</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(nums.length&lt;=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    nums.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    	<span class="keyword">return</span> a-b</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i&lt;nums.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h5 id="方法三：利用对象属性"><a href="#方法三：利用对象属性" class="headerlink" title="方法三：利用对象属性"></a>方法三：利用对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> obj = &#123;&#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> nums)&#123;</div><div class="line">        <span class="keyword">if</span>(!obj[i])&#123;</div><div class="line">            obj[i]=<span class="number">1</span></div><div class="line">            <span class="keyword">continue</span>      <span class="comment">//continue 跳过当前循环 </span></div><div class="line">        &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -315,6 +401,10 @@
     
     
     
+
+    <div>
+          
+    </div>
 
     
 
@@ -355,7 +445,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/删除数组重复元素/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/判断数组是否有重复项/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="看不见的城">
@@ -374,7 +464,168 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/03/删除数组重复元素/" itemprop="url">删除数组重复元素</a></h1>
+                <a class="post-title-link" href="/uncategorized/判断数组是否有重复项/" itemprop="url">判断数组是否有重复项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T10:20:15+08:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  183
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>给定一个整数数组，判断是否存在重复元素。</p>
+<p>如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。</p>
+</blockquote>
+<h5 id="方法一：es6-Set方法"><a href="#方法一：es6-Set方法" class="headerlink" title="方法一：es6 Set方法"></a>方法一：es6 Set方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(nums)</div><div class="line">    <span class="keyword">return</span> set.size != nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="方法二：sort排序比较临近两项"><a href="#方法二：sort排序比较临近两项" class="headerlink" title="方法二：sort排序比较临近两项"></a>方法二：sort排序比较临近两项</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(nums.length&lt;=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    nums.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    	<span class="keyword">return</span> a-b</div><div class="line">    &#125;)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i&lt;nums.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i]==nums[i+<span class="number">1</span>])&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="方法三：利用对象属性"><a href="#方法三：利用对象属性" class="headerlink" title="方法三：利用对象属性"></a>方法三：利用对象属性</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> containsDuplicate = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> obj = &#123;&#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> nums)&#123;</div><div class="line">        <span class="keyword">if</span>(!obj[i])&#123;</div><div class="line">            obj[i]=<span class="number">1</span></div><div class="line">            <span class="keyword">continue</span>      <span class="comment">//continue 跳过当前循环 </span></div><div class="line">        &#125;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+          
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/删除数组重复元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="看不见的城">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="看不见的城">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/删除数组重复元素/" itemprop="url">删除数组重复元素</a></h1>
         
 
         <div class="post-meta">
@@ -407,6 +658,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  272
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -449,6 +731,10 @@
     
     
 
+    <div>
+          
+    </div>
+
     
 
     
@@ -488,7 +774,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/博客的作用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/博客的作用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="看不见的城">
@@ -507,7 +793,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/29/博客的作用/" itemprop="url">博客的作用</a></h1>
+                <a class="post-title-link" href="/uncategorized/博客的作用/" itemprop="url">博客的作用</a></h1>
         
 
         <div class="post-meta">
@@ -541,6 +827,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  31
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -570,6 +887,10 @@
     
     
     
+
+    <div>
+          
+    </div>
 
     
 
@@ -610,7 +931,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/正则表达式的运算/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/正则表达式的运算/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="看不见的城">
@@ -629,7 +950,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/18/正则表达式的运算/" itemprop="url">正则表达式的运算</a></h1>
+                <a class="post-title-link" href="/uncategorized/正则表达式的运算/" itemprop="url">正则表达式的运算</a></h1>
         
 
         <div class="post-meta">
@@ -662,6 +983,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
           
 
           
@@ -824,6 +1176,10 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
     
     
 
+    <div>
+          
+    </div>
+
     
 
     
@@ -863,7 +1219,7 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/看不见的城/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/uncategorized/看不见的城/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="看不见的城">
@@ -882,7 +1238,7 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/18/看不见的城/" itemprop="url">我的第一篇博客</a></h1>
+                <a class="post-title-link" href="/uncategorized/看不见的城/" itemprop="url">我的第一篇博客</a></h1>
         
 
         <div class="post-meta">
@@ -916,6 +1272,37 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -943,6 +1330,10 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
     
     
     
+
+    <div>
+          
+    </div>
 
     
 
@@ -1020,12 +1411,21 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
@@ -1033,7 +1433,7 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1059,6 +1459,13 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1070,7 +1477,8 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1079,19 +1487,25 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
   
 </div>
 
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    访问人数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
+<span> | </span>
+<div class="powered-by">
+  <i class="fa fa-eye"></i>
+  <span id="busuanzi_container_site_pv">
+      访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+</div>
+<span> | </span>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <i class="fa fa-pencil"></i>
+  <span class="post-count">博客全站共1.9k字</span>
+</div>
 
         
 
@@ -1105,11 +1519,6 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1134,6 +1543,8 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
 
   
 
+
+  
 
 
 
@@ -1173,6 +1584,11 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1258,5 +1674,5 @@ str.replace( /(\w+)@(\w+(\.\w+)+)/g, function ( s, g1, g2, g3 ) {
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[博客主题插件各种配置]]></title>
+    <title><![CDATA[博客主题插件配置]]></title>
     <url>%2F%E5%89%8D%E7%AB%AF%2F%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[今天花了点时间换了下博客的主题，以及配置了一些插件！]]></content>
+    <content type="text"><![CDATA[今天花了点时间换了下博客的主题，以及配置了一些插件！ 放上几个地址供大家学习参考： https://www.jianshu.com/p/f054333ac9e6 https://www.simon96.online/2018/10/12/hexo-tutorial/]]></content>
       <categories>
         <category>前端</category>
       </categories>

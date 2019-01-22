@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[目前控制文本溢出显示...的几种纯css方法]]></title>
+    <url>%2Funcategorized%2F%E7%9B%AE%E5%89%8D%E6%8E%A7%E5%88%B6%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA-%E7%9A%84%E5%87%A0%E7%A7%8D%E7%BA%AFcss%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[目前几种纯css控制文本溢出显示…的方法1、单行文本 text-overflow （通用）12345text &#123; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;&#125; 2、多行文本2.1 -webkit-line-clamp (谷歌特有)123456text &#123; display: -webkit-box; //将对象作为弹性伸缩盒子模型显示 overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; //设置或检索伸缩盒对象的子元素的排列方式&#125; 因为 -webkit-line-clamp 是一个不规范的属性，它没有出现在 CSS 规范草案中。只有 webkit 内核的浏览器才支持这个属性，像 Firefox, IE 浏览器统统都不支持这个属性。兼容性不好！ 多用于移动端页面，因为移动设备浏览器更多是基于 webkit 内核。 2.2 float 特性实现多行文本截断基本原理： 有个三个盒子 div，粉色盒子左浮动，浅蓝色盒子和黄色盒子右浮动， 当浅蓝色盒子的高度低于粉色盒子，黄色盒子仍会处于浅蓝色盒子右下方。 如果浅蓝色盒子文本过多，高度超过了粉色盒子，则黄色盒子不会停留在右下方，而是掉到了粉色盒子下。 好了，这样两种状态的两种展示形式已经区分开了，那么我们可以将黄色盒子进行相对定位，将内容溢出的黄色盒子移动到文本内容右下角，而未溢出的则会被移到外太空去了，只要我们使用 overflow: hidden 就可以隐藏掉。 基本原理就是这样，我们可以将浅蓝色区域想象成标题，黄色区域想象为省略号效果。那么你可能会觉得粉色盒子占了空间，那岂不是标题会整体延后了吗，这里可以通过 margin 的负值来出来，设置浅蓝色盒子的 margin-left 的负值与粉色盒子的宽度相同，标题也能正常显示。 那么我们将前面的 DOM 结构简化下，变成下面这样： 123&lt;div class="wrap"&gt; &lt;div class="text"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos labore sit vel itaque delectus atque quos magnam assumenda quod architecto perspiciatis animi.&lt;/div&gt;&lt;/div&gt; 刚才的粉色盒子和黄色盒子都可以用伪元素来代替。 1234567891011121314151617181920212223242526272829303132.wrap &#123; height: 40px; line-height: 20px; overflow: hidden;&#125;.wrap .text &#123; float: right; margin-left: -5px; width: 100%; word-break: break-all;&#125;.wrap::before &#123; float: left; width: 5px; content: ''; height: 40px;&#125;.wrap::after &#123; float: right; content: "..."; height: 20px; line-height: 20px; /* 为三个省略号的宽度 */ width: 3em; /* 使盒子不占位置 */ margin-left: -3em; /* 移动省略号位置 */ position: relative; left: 100%; top: -20px; padding-right: 5px;&#125; 优点： 兼容性好，对各大主流浏览器有好的支持 响应式截断，根据不同宽度做出调整 文本超出范围才显示省略号，否则不显示省略号 因为是模拟省略号，所以显示位置有时候没办法刚刚好，可以考虑： 加一个渐变效果，贴合文字. 添加 word-break: break-all; 使一个单词能够在换行时进行拆分，这样文字和省略号贴合效果更佳。 原文地址 : https://github.com/happylindz/blog/issues/12]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[博客主题插件配置]]></title>
     <url>%2F%E5%89%8D%E7%AB%AF%2F%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[今天花了点时间换了下博客的主题，以及配置了一些插件！ 放上几个地址供大家学习参考： https://www.jianshu.com/p/f054333ac9e6 https://www.simon96.online/2018/10/12/hexo-tutorial/]]></content>
+    <content type="text"><![CDATA[今天花了点时间换了下博客的主题，以及配置了一些插件！ 放上几个地址供大家学习参考： https://www.jianshu.com/p/f054333ac9e6 https://www.simon96.online/2018/10/12/hexo-tutorial/ https://www.jianshu.com/p/344cf061598d]]></content>
       <categories>
         <category>前端</category>
       </categories>
